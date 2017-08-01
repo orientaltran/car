@@ -33,4 +33,9 @@ class MyController extends Controller
     		echo "false";
     	}
     }
+
+    public function postForm(Request $request)  
+    {
+    	echo $request->name;
+    }
 }

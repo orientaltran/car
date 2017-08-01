@@ -67,3 +67,10 @@ Route::get('/course/{name}', 'MyController@course');
 
 /*URL*/
 Route::get('/myrequest', 'MyController@getUrl');
+
+//send data width request
+Route::get('/getform', function() {
+	return view('postform');
+});
+
+Route::post('postform', ['as' => 'postform', 'uses' => 'MyController@postForm']);

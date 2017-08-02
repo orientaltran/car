@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class MyController extends Controller
 {
@@ -37,5 +38,23 @@ class MyController extends Controller
     public function postForm(Request $request)  
     {
     	echo $request->name;
+    }
+
+    public function setCookie() 
+    {
+        $response = new Response();
+        $response->withCookie(
+             'name',//name cookie
+             'oriental',//value cookie
+             1 //minutes-phut
+            );
+        echo "SetCookies";
+        return $response;
+    }
+
+    public function getCookie(Request $request)  
+    {   
+        echo "Cookie name: ";
+        return $request->cookie('name');
     }
 }

@@ -57,4 +57,13 @@ class MyController extends Controller
         echo "Cookie name: ";
         return $request->cookie('name');
     }
+
+    public function postFile(Request $request) 
+    {
+    	if ($request->hasFile('myfile')) {
+    		echo "have file";
+    	} else {
+    		echo "no file";
+    	}
+    }
 }

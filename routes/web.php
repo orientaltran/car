@@ -85,4 +85,9 @@ Route::get('uploadfile', function() {
 	return view('uploadfile');
 });
 
-Route::get('postfile', ['as' => 'postfile', 'uses' => 'MyController@postFile']);
+//Route::get('postfile', ['as' => 'postfile', 'uses' => 'MyController@postFile']);
+Route::post('postfile','MyController@postFile');
+
+
+Route::get('/upload', 'UploadController@uploadForm');
+Route::post('/upload', 'UploadController@uploadSubmit');

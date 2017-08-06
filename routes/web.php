@@ -91,3 +91,7 @@ Route::post('postfile','MyController@postFile');
 
 Route::get('/upload', 'UploadController@uploadForm');
 Route::post('/upload', 'UploadController@uploadSubmit');
+
+
+Route::get('file','FileController@index');
+Route::post('file','Filecontroller@doUpload');

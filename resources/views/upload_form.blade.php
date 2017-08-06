@@ -9,6 +9,7 @@
     {{ csrf_field() }}
     Product name:
     <br />
+    
     <input type="text" name="name" />
     <br /><br />
     Product photos (can attach more than one):

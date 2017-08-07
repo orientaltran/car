@@ -81,9 +81,9 @@ Route::get('setcookie', 'MyController@setCookie');
 Route::get('getcookie', 'MyController@getCookie');
 
 //upload file
-Route::get('uploadfile', function() {
-	return view('uploadfile');
-});
+// Route::get('uploadfile', function() {
+// 	return view('uploadfile');
+// });
 
 //Route::get('postfile', ['as' => 'postfile', 'uses' => 'MyController@postFile']);
 Route::post('postfile','MyController@postFile');
@@ -95,3 +95,8 @@ Route::post('/upload', 'UploadController@uploadSubmit');
 
 Route::get('file','FileController@index');
 Route::post('file','Filecontroller@doUpload');
+
+//new upload file
+Route::get('uploadfile', ['as' => 'uploadfile', 'uses' => 'UploadFileController@getAddFile']);
+
+Route::post('uploadfile', ['as' => 'uploadfile', 'uses' => 'UploadFileController@postAddFile']);

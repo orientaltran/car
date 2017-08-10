@@ -94,7 +94,7 @@ Route::post('/upload', 'UploadController@uploadSubmit');
 
 
 Route::get('file','FileController@index');
-Route::post('file','Filecontroller@doUpload');
+Route::post('file','FileController@doUpload');
 
 //new upload file
 Route::get('uploadfile', ['as' => 'uploadfile', 'uses' => 'UploadFileController@getAddFile']);

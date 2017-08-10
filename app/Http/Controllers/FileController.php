@@ -35,7 +35,7 @@ class FileController extends Controller
       	  //Lấy kiểu file
       	  echo 'Kiểu files: '.$file->getMimeType();   
 
-      	  $file->move('upload',$file->getClientOriginalName());
+      	  $file->move('resources/upload',$file->getClientOriginalName());
        }
     }
 }

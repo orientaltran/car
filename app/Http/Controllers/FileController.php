@@ -13,8 +13,9 @@ class FileController extends Controller
     public function doUpload(Request $request){
     	//xử lý upload ở đây
     	//Kiểm tra file
+      //var_dump($request->hasFile('fileTest')); die("test");
        if($request->hasFile('fileTest')){
-          $file = $request->filesTest;
+          $file = $request->fileTest;
    
           //Lấy Tên files
       	  echo 'Tên Files: '.$file->getClientOriginalName();
@@ -35,7 +36,7 @@ class FileController extends Controller
       	  //Lấy kiểu file
       	  echo 'Kiểu files: '.$file->getMimeType();   
 
-      	  $file->move('resources/upload',$file->getClientOriginalName());
+      	  $file->move('upload',$file->getClientOriginalName());
        }
     }
 }

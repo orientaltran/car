@@ -9,7 +9,7 @@
 <body>
     <form action="{{ url('file') }}" enctype="multipart/form-data" method="POST">
         {{ csrf_field() }}
-        <input type="file" name="filesTest" required="true">
+        <input type="file" name="fileTest" required="true">
         <br/>
         <input type="submit" value="upload">
     </form>

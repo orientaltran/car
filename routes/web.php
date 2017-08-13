@@ -95,3 +95,9 @@ Route::post('file','FileController@doUpload');
 Route::get('uploadfile', ['as' => 'uploadfile', 'uses' => 'UploadFileController@getAddFile']);
 
 Route::post('uploadfile', ['as' => 'uploadfile', 'uses' => 'UploadFileController@postAddFile']);
+
+
+//blade template
+Route::get('call-view',function(){
+   return view('home');
+});

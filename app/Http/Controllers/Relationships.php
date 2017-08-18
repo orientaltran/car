@@ -10,7 +10,7 @@ class Relationships extends Controller
 {
     public function toAndto()
     {
-    	$post = Posts::find(1)->FeaturedImages;
+    	$post = Posts::find(1)->Featured_Images;
     	print_r($post);
     }
 }

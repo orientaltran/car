@@ -125,3 +125,6 @@ Route::get('/', function () {
 
 //model 
 Route::get('modelget','MyController@modelGet');
+
+//relationships
+Route::get('relationship', 'Relationships@toAndto');

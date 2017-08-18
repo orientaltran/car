@@ -122,3 +122,6 @@ Route::get('/', function () {
     print_r($where);
 
 });
+
+//model 
+Route::get('modelget','MyController@modelGet');

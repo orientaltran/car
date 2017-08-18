@@ -101,3 +101,24 @@ Route::post('uploadfile', ['as' => 'uploadfile', 'uses' => 'UploadFileController
 Route::get('call-view',function(){
    return view('home');
 });
+
+//database get table
+Route::get('/', function () {
+
+	//Kết nối với cơ sở dữ liệu.
+	//Nếu truy vấn trong controllers thì các bạn cần phải khai báo use Illuminate\Support\Facades\DB; còn trong Route thì không cần.
+    $data = DB::table('upload_files')->get();
+    //print_r($data);
+
+    $files = DB::table('upload_files')->select('id', 'file')->get();
+
+    //print_r ($files);
+    //$where = DB::table('upload_files')->select('id', 'file')->where('id', 1)->get();//=
+    //$where = DB::table('upload_files')->select('id', 'file')->where('id','>', 1)->get(); //>
+    //$where = DB::table('upload_files')->select('id', 'file')->where('id','<', 2)->get(); //<
+    //$where = DB::table('upload_files')->select('id', 'file')->where('id','<>', 1)->get();   //<>
+
+    $where = DB::table('upload_files')->select('id', 'file')->where('id','>', 1)->orwhere('id', '<', 3)->get();
+    print_r($where);
+
+});
